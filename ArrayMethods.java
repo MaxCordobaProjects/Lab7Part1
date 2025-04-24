@@ -7,122 +7,131 @@ import java.util.Arrays;
  */
 public class ArrayMethods
 {
-   int[] myArray = {7,8,8,3,4,9,8,7};
-   /**
+    int[] myArray = {7,8,8,3,4,9,8,7};
+    /**
     Calculates the size of myArray
     @return the size
-    */
-   public int count() {
-       int size = 0;
-       for(int x : myArray) {
-           size++;
-       }
-       return size;
-   }
-   /**
+     */
+    public int count() {
+        int size = 0;
+        for(int x : myArray) {
+            size++;
+        }
+        return size;
+    }
+
+    /**
     Calculates the sum of the integers in myArray
     @return the sum
-    */
-   public int sum() {
-       int total = 0;
-       for(int x : myArray) {
-           total += x;
-       }
-       return total;
-   }
-   /**
+     */
+    public int sum() {
+        int total = 0;
+        for(int x : myArray) {
+            total += x;
+        }
+        return total;
+    }
+
+    /**
     Calculates the average of the integers in myArray
     @return the average
-    */
-   public double average() {
-       return (double)sum() / count();
-   }
-   /**
+     */
+    public double average() {
+        return (double)sum() / count();
+    }
+
+    /**
     Finds the largest integer in myArray
     @return the largest integer
-    */
-   public int findMax() {
-       int biggest = myArray[0];
-       for(int x : myArray) {
-           if(x > biggest) {
-               biggest = x;
-           }
-       }
-       return biggest;
-   }
-   /**
+     */
+    public int findMax() {
+        int biggest = myArray[0];
+        for(int x : myArray) {
+            if(x > biggest) {
+                biggest = x;
+            }
+        }
+        return biggest;
+    }
+
+    /**
     Finds the index of the largest integer in myArray
     @return the index of the largest integer in myArray
-    */
-   public int findIndexOfMax() {
-       int count = 0;
-       int finalCount = 0;
-       for(int x: myArray) {
-           if(x == findMax()) {
-               finalCount = count;
-           }
-           count++;
-       }
-       return finalCount;
-   }
-   /**
+     */
+    public int findIndexOfMax() {
+        int count = 0;
+        int finalCount = 0;
+        for(int x: myArray) {
+            if(x == findMax()) {
+                finalCount = count;
+            }
+            count++;
+        }
+        return finalCount;
+    }
+
+    /**
     Finds the last index of the integer key in myArray
     @param key int that is inputted
     @return the last index of the integer key in myArray
-    */
-   public int findLast(int key) {
-       int index = -1;
-       for(int x = myArray.length - 1; x >= 0; x--) {
-           if(myArray[x] == key) {
-               index = x;
-               return index;
-           }
-       }
-       return index;
-   }
-   /**
+     */
+    public int findLast(int key) {
+        int index = -1;
+        for(int x = myArray.length - 1; x >= 0; x--) {
+            if(myArray[x] == key) {
+                index = x;
+                return index;
+            }
+        }
+        return index;
+    }
+
+    /**
     Creates a new array with the indexes of all int key's in myArray
     @param key int that is inputted
     @return the new array with the indexes of all int key's in myArray
-    */
-   public int[] findAll(int key) {
-       int count = 0;
-       for(int x: myArray) {
-           if(x == key) {
-               count++;
-           }
-       }
-       int newCount = 0;
-       int[] newArray = new int[count];
-       for(int x = 0; x < myArray.length; x++) {
-           if(myArray[x] == key) {
-               newArray[newCount] = x;
-               newCount++;
-           }
-       }
-       return newArray;
-   }
-   /**
+     */
+    public int[] findAll(int key) {
+        int count = 0;
+        for(int x: myArray) {
+            if(x == key) {
+                count++;
+            }
+        }
+        int newCount = 0;
+        int[] newArray = new int[count];
+        for(int x = 0; x < myArray.length; x++) {
+            if(myArray[x] == key) {
+                newArray[newCount] = x;
+                newCount++;
+            }
+        }
+        return newArray;
+    }
+
+    /**
     Gets the array
     @return the array
-    */
-   public int[] getArray() {
-       return myArray;
-   }
-   /**
+     */
+    public int[] getArray() {
+        return myArray;
+    }
+
+    /**
     Creates a copy of myArray
     @return the copy of myArray
-    */
-   public int[] copyArray() {
-       int[] copyOfMyArray = Arrays.copyOf(myArray, myArray.length);
-       return copyOfMyArray;
-   }
-   /**
+     */
+    public int[] copyArray() {
+        int[] copyOfMyArray = Arrays.copyOf(myArray, myArray.length);
+        return copyOfMyArray;
+    }
+
+    /**
     prints an int array, nicely formatted
     @param inArray int array to print
-    */
+     */
     public void print(int[ ] inArray) {
-        System.out.print("{");
+        System.out.print("{"); 
         int i;
         for (i = 0; i < inArray.length - 1; i++) {
             System.out.print(inArray[i] + ", ");
@@ -131,5 +140,35 @@ public class ArrayMethods
             System.out.print(inArray[i]);
         }
         System.out.println("}");
+    }
+
+    /**
+    Sorts an array from least to greatest
+    @param copyOfMyArray int array inputted to be modified
+     */
+    public void sortArray(int[] copyOfMyArray) {
+        for(int j = 0; j < copyOfMyArray.length - 1; j++) {
+            for(int i = 0; i < copyOfMyArray.length - 1; i++) {
+                if(copyOfMyArray[i] > copyOfMyArray[i + 1]) {
+                    int temp = copyOfMyArray[i];
+                    copyOfMyArray[i] = copyOfMyArray[i + 1];
+                    copyOfMyArray[i + 1] = temp;
+                }
+            }
+        }
+    }
+
+    /**
+    Reverses the order of an array
+    @param inArray int array inputted to be reversed
+    @return the reversed array
+     */
+    public int[] reverseArray(int[] inArray) {
+        for(int i=0, j = inArray.length - 1; i < j; i++, j--) {
+            int temp = inArray[j];
+            inArray[j] = inArray[i];
+            inArray[i] = temp;
+        }
+        return inArray;
     }
 }

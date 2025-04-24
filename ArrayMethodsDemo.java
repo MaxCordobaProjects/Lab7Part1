@@ -26,28 +26,24 @@ public class ArrayMethodsDemo
         int[] copyOfMyArray = test.copyArray();
         System.out.println("myArray[] and copyOfMyArray[] are equal: " + Arrays.equals(test.getArray(),copyOfMyArray));
 
-        // //Part 2
-        // System.out.println("\n\nLab7 Pt2 - Let's continue to rumble :-)");
-        // System.out.println("=======================================");
-        // test.sortArray(copyOfMyArray);
-        // System.out.print("copyOfMyArray[] sorted is: ");
-        // test.print(copyOfMyArray);
-        // System.out.println("myArray[] and copyOfMyArray[] are equal: " 
-            // + Arrays.equals(test.getArray(),copyOfMyArray));
-        // int[] anotherCopyOfMyArray = test.copyArray();
-        // System.out.print("anotherCopyOfMyArray[]: ");
-        // test.print(anotherCopyOfMyArray);
-        // Arrays.sort(anotherCopyOfMyArray);
-        // System.out.print("anotherCopyOfMyArray[] sorted: ");
-        // test.print(anotherCopyOfMyArray);
-        // System.out.println("copyOfMyArray[] and anotherCopyOfMyArray[] are equal: " 
-            // + Arrays.equals(copyOfMyArray, anotherCopyOfMyArray));
-        // anotherCopyOfMyArray = test.reverseArray(anotherCopyOfMyArray);
-        // System.out.print("anotherCopyOfMyArray[] reversed is: ");
-        // test.print(anotherCopyOfMyArray);
-        // System.out.println();
-        // test.genFiveByFiveRows();
-        // System.out.println();
-        // test.genFiveByFiveCols();
+        //Part 2
+        System.out.println("\n\nLab7 Pt2 - Let's continue to rumble :-)");
+        System.out.println("=======================================");
+        test.sortArray(copyOfMyArray);
+        System.out.print("copyOfMyArray[] sorted is: ");
+        test.print(copyOfMyArray);
+        System.out.println("myArray[] and copyOfMyArray[] are equal: " 
+            + Arrays.equals(test.getArray(),copyOfMyArray));
+        int[] anotherCopyOfMyArray = test.copyArray();
+        System.out.print("anotherCopyOfMyArray[]: ");
+        test.print(anotherCopyOfMyArray);
+        Arrays.sort(anotherCopyOfMyArray);
+        System.out.print("anotherCopyOfMyArray[] sorted: ");
+        test.print(anotherCopyOfMyArray);
+        System.out.println("copyOfMyArray[] and anotherCopyOfMyArray[] are equal: " 
+            + Arrays.equals(copyOfMyArray, anotherCopyOfMyArray));
+        anotherCopyOfMyArray = test.reverseArray(anotherCopyOfMyArray);
+        System.out.print("anotherCopyOfMyArray[] reversed is: ");
+        test.print(anotherCopyOfMyArray);
     }
 }
